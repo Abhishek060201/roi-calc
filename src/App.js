@@ -5,6 +5,32 @@ import SwitchComponent from './components/SwitchComponent';
 import InputComponent from './components/InputComponent';
 
 const App = () => {
+  const [input1, setInput1] = useState('0.000 USD');
+  const [input2, setInput2] = useState('0.00 USD');
+
+  const handleSelect1 = (e) => {
+    const tiers = document.querySelectorAll('.timeframe + div > div');
+
+    tiers.forEach((tier) => {
+      if (tier !== e.target) {
+        tier.classList.remove('selected');
+      } else {
+        e.target.classList.add('selected');
+      }
+    });
+  }
+
+  const handleSelect2 = (e) => {
+    const tiers = document.querySelectorAll('.tiers > div');
+
+    tiers.forEach((tier) => {
+      if (tier !== e.target) {
+        tier.classList.remove('selected');
+      } else {
+        e.target.classList.add('selected');
+      }
+    });
+  }
 
   return (
     <div className="app">
@@ -21,7 +47,7 @@ const App = () => {
         <div className='usd'>USD</div>
       </div>
 
-      <InputComponent value='0.000 USD' />
+      <InputComponent inputValue={input1} setInputValue={setInput1} />
 
       <div className='money-cake'>
         <div>
@@ -34,11 +60,11 @@ const App = () => {
       <h2 className='timeframe'>Timeframe</h2>
 
       <div>
-        <div>1 Day</div>
-        <div>7 Days</div>
-        <div>30 Days</div>
-        <div>1 Year</div>
-        <div>5 Year</div>
+        <div onClick={handleSelect1} className='selected'>1 Day</div>
+        <div onClick={handleSelect1}>7 Days</div>
+        <div onClick={handleSelect1}>30 Days</div>
+        <div onClick={handleSelect1}>1 Year</div>
+        <div onClick={handleSelect1}>5 Year</div>
       </div>
 
       <div className='enable-accelerated-apy'>
@@ -49,16 +75,16 @@ const App = () => {
       <div className='select-tier'>Select Tier</div>
 
       <div className='tiers'>
-        <div>Tier 1</div>
-        <div>Tier 2</div>
-        <div>Tier 3</div>
-        <div>Tier 4</div>
-        <div>Tier 5</div>
+        <div onClick={handleSelect2} className='selected'>Tier 1</div>
+        <div onClick={handleSelect2}>Tier 2</div>
+        <div onClick={handleSelect2}>Tier 3</div>
+        <div onClick={handleSelect2}>Tier 4</div>
+        <div onClick={handleSelect2}>Tier 5</div>
       </div>
 
       <div className='roi-current-rates'>ROI at Current Rates</div>
 
-      <InputComponent value='0.00 USD' />
+      <InputComponent inputValue={input2} setInputValue={setInput2} />
       <div className='cake-don'>~ 0.000 CAKE + 0.000000 DON</div>
 
       <div className='hide-details'>Hide Details ^</div>
