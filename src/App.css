@@ -1,38 +1,203 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+:root {
+  --dark-yellow: #f0c642;
+  --light-yellow: #f9ed85;
+  --dark-gray: rgb(174, 174, 175);
+  --light-gray: rgb(241, 243, 245);
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 20px;
+  border: solid 5px gainsboro;
+  border-radius: 5px;
+  width: 575px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.close-btn {
+  font-size: x-large;
+}
+
+.cake {
+  display: flex;
+  justify-content: flex-end;
+  color: gray;
+  width: 100%;
+  font-size: small;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.cake .text {
+  margin-right: 10px;
+}
+
+.cake .usd {
+  margin-left: 10px;
+}
+
+.switch {
+  background: #f0c642;
+}
+
+/* Input Component */
+.input-component {
+  background-color: var(--light-gray);
+  font-size: x-large;
+  font-weight: 700;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  border: 2px gainsboro solid;
+  border-radius: 5px;
+  text-align: end;
+}
+
+/* money-cake */
+.money-cake {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.money-cake > div {
+  display: flex;
+}
+
+.money {
+  width: 100px;
+  margin-right: 10px;
+  padding: 10px;
+  background-color: var(--light-gray);
+  border-radius: 10px;
+  color: black;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.money-cake > div:nth-child(2) {
+  color: var(--dark-gray);
+  font-weight: 700;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.timeframe {
+  color: black;
+  font-size: medium;
+  font-weight: 600;
+  margin: 20px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.timeframe + div {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.timeframe + div > div {
+  font-weight: 700;
+  background-color: var(--light-yellow);
+  padding: 10px 25px;
+  border-radius: 50px;
+  border: 1px solid var(--dark-yellow);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.enable-accelerated-apy {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.enable-accelerated-apy > h2 {
+  font-size: medium;
+  font-weight: 700;
+}
+
+.select-tier {
+  font-size: medium;
+  font-weight: 700;
+  color: var(--dark-gray);
+}
+
+.tiers {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.tiers > div {
+  font-weight: 700;
+  background-color: var(--light-yellow);
+  padding: 10px 25px;
+  border-radius: 50px;
+  border: 1px solid var(--dark-yellow);
+}
+
+.roi-current-rates {
+  font-size: medium;
+  font-weight: 700;
+  color: var(--dark-gray);
+  width: 100%;
+  text-align: end;
+}
+
+.cake-don {
+  font-size: medium;
+  font-weight: 600;
+  color: var(--dark-gray);
+  width: 100%;
+  text-align: end;
+}
+
+.hide-details {
+  font-weight: 600;
+  text-align: center;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top > div:first-child {
+  font-size: medium;
+  font-weight: 700;
+}
+
+.top > div:last-child {
+  font-size: medium;
+  font-weight: 700;
+  color: var(--dark-yellow);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+}
+
+li {
+  color: var(--dark-gray);
+  font-weight: 600;
 }
